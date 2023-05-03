@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h1>Test</h1>
+        <h1>Canteen Manegment sohag </h1>
         <p>Test</p>
         <a href="test.php">Test</a>
     </body>
