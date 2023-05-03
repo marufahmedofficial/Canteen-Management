@@ -1,8 +1,8 @@
 <html>
     <body>
-        <h1>Test</h1>
+        <h1>Test new</h1>
 <<<<<<< HEAD
-        <p>This is a Test</p>
+        <p>This is a Test 02</p>
         <a href="test.php">Test</a>
 =======
         <p>Test</p>
