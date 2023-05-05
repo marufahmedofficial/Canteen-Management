@@ -1,3 +1,43 @@
+<?php
+
+session_start();
+
+if(isset($_POST['submit'])){
+  $servername = 'localhost';
+  $username = 'root';
+  $password = '';
+  $database = 'canteen_management_system';
+
+  $conn = mysqli_connect($servername, $username, $password, $database) or die('connection failed!');
+    
+  $Email = $_POST['email'];
+  $Password = $_POST['password'];
+
+  $select = "SELECT * FROM `customers` WHERE `customer_email` = '$Email' AND `customer_password` = '$Password'";
+
+  $result = mysqli_query($conn, $select);
+
+  $num = mysqli_num_rows($result);
+
+  if($num > 0){
+
+    $fetch = mysqli_fetch_assoc($result);
+    $_SESSION['user_id'] = $fetch['customer_id'];
+    header('location: user_profile.php');
+
+  }
+  else{
+
+    $alert[] = 'Incorrect password or email!';
+
+  }
+
+  $conn->close();
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +66,7 @@
                             <a class="nav-link" aria-current="page" href="home.html" target="_new">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="about.html" target="_new">About</a>
+                            <a class="nav-link" href="about.html" target="_new">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html" target="_new">Contact</a>
@@ -35,7 +75,7 @@
                             <a class="nav-link" href="items.html" target="_new">Food List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php" target="_new">Login</a>
+                            <a class="nav-link active" href="login.php" target="_new">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="signup.php" target="_new">Signup</a>
@@ -46,7 +86,40 @@
         </nav>
     </div>
 
-    <p>This is about page</p>
+    <div class="container" style="width: 360px; margin-top: 100px; border: 1px solid gray; border-radius: 10px;">
+        <h1 class="text-center">Login Now</h1>
+
+        <?php
+
+            if(isset($alert)){
+
+                foreach($alert as $alert){
+
+                    echo '<span>'.$alert.'</span>';
+
+                };
+            
+            };
+
+        ?>
+
+        <form action="" method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="d-grid gap-2 d-md-block">
+                <input type="submit" class="btn btn-outline-dark" name="submit" value="login">
+            </div>
+        </form>
+        <p>
+            Don't have any account <a href="signup.php">Signup</a>
+        </p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
