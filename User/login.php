@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 
     $fetch = mysqli_fetch_assoc($result);
     $_SESSION['user_id'] = $fetch['customer_id'];
-    header('location: user_profile.php');
+    header('location: items.php');
 
   }
   else{
@@ -72,7 +72,7 @@ if(isset($_POST['submit'])){
                             <a class="nav-link" href="contact.html" target="_new">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="items.html" target="_new">Food List</a>
+                            <a class="nav-link" href="items.php" target="_new">Food List</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="login.php" target="_new">Login</a>
