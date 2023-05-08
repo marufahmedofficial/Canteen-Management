@@ -40,12 +40,14 @@ if(isset($_GET['logout'])){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Canteen Management System</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <title>Food List - Canteen Management System</title>
 </head>
 
 <body>
+
+  <!--Navbar starts here-->
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
       <div class="container-fluid">
@@ -79,7 +81,9 @@ if(isset($_GET['logout'])){
       </div>
     </nav>
   </div>
+  <!--Navbar ends here-->
 
+  <!--List starts here-->
   <div class="container" style="width: 500px; margin-top: 100px; padding: 10px; border: 1px solid gray; border-radius: 10px;">
 
     <?php
@@ -93,6 +97,7 @@ if(isset($_GET['logout'])){
 
     ?>
 
+    <!--Fatch items from database and display them in this table-->
     <table cellpadding="20" cellspacing="20" text-align="center">
 
       <tr style="margin-left: 2em;">
@@ -134,6 +139,7 @@ if(isset($_GET['logout'])){
 
     <?php
 
+      //Insert orders in the database
 			if(isset($_GET['item_id'])){
 
 				$id = $_GET['item_id'];
@@ -169,6 +175,7 @@ if(isset($_GET['logout'])){
 
     ?></p></span>
     
+    <!--Logout part starts here-->
     <div class="container" style="width: 360px;">
 
       <form action="" method="">
@@ -176,8 +183,10 @@ if(isset($_GET['logout'])){
       </form>
 
     </div></center>
+    <!--Logout part ends here-->
 
   </div>
+  <!--List ends here-->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
