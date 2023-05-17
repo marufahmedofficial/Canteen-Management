@@ -29,10 +29,15 @@ session_start();
   <style> 
   #btn-back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 9px;
+  right: 8px;
   display: none;
   }
+    #btn-back-to-top:hover {
+            background-color:darkblue;   
+    } 
+
+
   </style>
 
 
