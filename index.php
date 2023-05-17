@@ -18,7 +18,26 @@ session_start();
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"> </head>
+ <!-- Favicon -->
+ <link href="img/favicon.ico" rel="icon">
+ 
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+<style> 
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+  </style>
+
+
+
+</head>
 
 <body class="home">
     
@@ -56,7 +75,9 @@ session_start();
             </nav>
 
         </header>
-
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
         <section class="hero bg-image" data-image-src="images/img/pimg.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
@@ -294,7 +315,69 @@ session_start();
             </div>
         </footer>
     
-    
+
+
+<!-- Back to top button -->
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Explanation -->
+<div class="container mt-4 text-center" style="height: 2000px;">
+  <p>
+    Start scrolling the page and a strong
+    <strong>"Back to top" button </strong> will appear in the
+    <strong>bottom right corner</strong> of the screen.
+  </p>
+
+  <p>
+    Click this button and you will be taken to the top of the page.
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        //Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}  
+    </script>        
 
     <script src="js/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
