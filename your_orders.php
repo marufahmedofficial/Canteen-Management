@@ -158,7 +158,7 @@ only screen and (max-width: 760px),
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.png" alt="" height="35px" width="65px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
