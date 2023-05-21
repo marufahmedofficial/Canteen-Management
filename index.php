@@ -45,12 +45,12 @@ session_start();
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.png" alt="" height="40px" width="65px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="categories.php">Categories <span class="sr-only"></span></a> </li>
-                            
+                        
                            
 							<?php
 						if(empty($_SESSION["user_id"])) // if user is not login
@@ -311,29 +311,18 @@ session_start();
                                 </div>
                     </div>
                 </div>
-          
+          <!-- Back to top button -->
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
             </div>
         </footer>
     
 
 
-<!-- Back to top button -->
-<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-  <i class="fas fa-arrow-up"></i>
-</button>
 
-<!-- Explanation -->
-<div class="container mt-4 text-center" style="height: 2000px;">
-  <p>
-    Start scrolling the page and a strong
-    <strong>"Back to top" button </strong> will appear in the
-    <strong>bottom right corner</strong> of the screen.
-  </p>
 
-  <p>
-    Click this button and you will be taken to the top of the page.
-  </p>
-</div>
 
 
 
