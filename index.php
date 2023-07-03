@@ -41,10 +41,11 @@ session_start();
   </style>
 
 
+
 </head>
 
 <body class="home">
-    
+
         <header id="header" class="header-scroll top-header headrom">
             <nav class="navbar navbar-dark">
                 <div class="container">
@@ -55,7 +56,14 @@ session_start();
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="categories.php">Categories <span class="sr-only"></span></a> </li>
                             
-                           
+                            <!-- <?php $ress= mysqli_query($db,"select point from users WHERE u_id='$_SESSION[u_id]'");
+									     $rows=mysqli_fetch_array($ress);
+                                         {
+                                            echo $rows;
+                                         }
+										  
+										  ?> -->
+                            
 							<?php
 						if(empty($_SESSION["user_id"])) // if user is not login
 							{
