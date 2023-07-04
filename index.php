@@ -18,10 +18,7 @@ session_start();
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-<<<<<<< HEAD
 
-=======
->>>>>>> d1d918ede7e60b5e7dbdddd338ddf230e662e10f
  <!-- Favicon -->
  <link href="img/favicon.ico" rel="icon">
  
@@ -29,8 +26,7 @@ session_start();
 
     <link href="css/style.css" rel="stylesheet">
 
-<<<<<<< HEAD
-  <style> 
+<style> 
   #btn-back-to-top {
   position: fixed;
   bottom: 9px;
@@ -41,7 +37,6 @@ session_start();
             background-color:darkblue;   
     } 
 
-=======
 <style> 
 #btn-back-to-top {
   position: fixed;
@@ -49,15 +44,12 @@ session_start();
   right: 20px;
   display: none;
 }
->>>>>>> d1d918ede7e60b5e7dbdddd338ddf230e662e10f
 
   </style>
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> d1d918ede7e60b5e7dbdddd338ddf230e662e10f
+
 </head>
 
 <body class="home">
@@ -96,18 +88,15 @@ session_start();
             </nav>
 
         </header>
-<<<<<<< HEAD
 
   <!-- Back to Top -->
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     
 
 
-=======
   <!-- Back to Top -->
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     
->>>>>>> d1d918ede7e60b5e7dbdddd338ddf230e662e10f
         <section class="hero bg-image" data-image-src="images/img/pimg.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
@@ -341,18 +330,16 @@ session_start();
                                 </div>
                     </div>
                 </div>
-<<<<<<< HEAD
 
           <!-- Back to top button -->
          <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
             <i class="fas fa-arrow-up"></i>
          </button>
-=======
+
           <!-- Back to top button -->
 <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
   <i class="fas fa-arrow-up"></i>
 </button>
->>>>>>> d1d918ede7e60b5e7dbdddd338ddf230e662e10f
 
             </div>
             
@@ -360,8 +347,6 @@ session_start();
     
 
 
-<<<<<<< HEAD
-=======
 
 
 
