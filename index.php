@@ -37,14 +37,6 @@ session_start();
             background-color:darkblue;   
     } 
 
-<style> 
-#btn-back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-}
-
   </style>
 
 
@@ -53,7 +45,7 @@ session_start();
 </head>
 
 <body class="home">
-    
+
         <header id="header" class="header-scroll top-header headrom">
             <nav class="navbar navbar-dark">
                 <div class="container">
@@ -63,8 +55,7 @@ session_start();
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="categories.php">Categories <span class="sr-only"></span></a> </li>
-                        
-                           
+
 							<?php
 						if(empty($_SESSION["user_id"])) // if user is not login
 							{
@@ -89,14 +80,10 @@ session_start();
 
         </header>
 
-  <!-- Back to Top -->
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     
 
 
-  <!-- Back to Top -->
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    
         <section class="hero bg-image" data-image-src="images/img/pimg.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
@@ -336,15 +323,17 @@ session_start();
             <i class="fas fa-arrow-up"></i>
          </button>
 
-          <!-- Back to top button -->
-<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
             </div>
             
         </footer>
     
+
+
+          <!-- Back to top button -->
+         <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+         </button>
+
 
     <script>
         //Get the button
