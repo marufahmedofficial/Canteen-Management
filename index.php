@@ -64,10 +64,18 @@ session_start();
 							}
 						else
 							{
+                                echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
+                                echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
 
+                                $user_id = $_SESSION['user_id'];
+                                $result= mysqli_query($db,"select point from users where u_id='$user_id'");
+                                if (mysqli_num_rows($result) > 0){
+                                     while($row = mysqli_fetch_assoc($result)) {
+                                        $point = $row['point'];
+                                        echo  "<li class='nav-item'<a href='your_orders.php' class='nav-link active'>💰$point</a> </li>";
+                                     }
+                                }
 									
-									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
 							}
 
 						?>
