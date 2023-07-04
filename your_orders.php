@@ -219,6 +219,7 @@ only screen and (max-width: 760px),
 							  <th>Item</th>
 							  <th>Quantity</th>
 							  <th>Price</th>
+							  <th>Table No.</th>
 							   <th>Status</th>
 							     <th>Date</th>
 								   <th>Action</th>
@@ -246,6 +247,7 @@ only screen and (max-width: 760px),
 														 <td data-column="Item"> <?php echo $row['title']; ?></td>
 														  <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
 														  <td data-column="price">BDT <?php echo $row['price']; ?></td>
+														  <td data-column="price"><?php echo $row['d_loc']; ?></td>
 														   <td data-column="status"> 
 														   <?php 
 																			$status=$row['status'];

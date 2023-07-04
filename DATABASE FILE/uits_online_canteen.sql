@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 05:33 PM
+-- Generation Time: Jul 04, 2023 at 09:03 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -183,30 +183,36 @@ CREATE TABLE `users_orders` (
   `quantity` int(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `status` varchar(222) DEFAULT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `d_loc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `users_orders`
 --
 
-INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `status`, `date`) VALUES
-(1, 4, 'Spring Rolls', 2, 6.00, 'rejected', '2022-05-27 11:43:26'),
-(2, 4, 'Prawn Crackers', 1, 7.00, 'closed', '2022-05-27 11:11:41'),
-(3, 5, 'Chicken Madeira', 1, 23.00, 'closed', '2022-05-27 11:42:35'),
-(4, 5, 'Cheesy Mashed Potato', 1, 5.00, 'in process', '2022-05-27 11:42:55'),
-(5, 5, 'Meatballs Penne Pasta', 1, 10.00, 'closed', '2022-05-27 13:18:03'),
-(6, 5, 'Yorkshire Lamb Patties', 1, 14.00, NULL, '2022-05-27 11:40:51'),
-(7, 6, 'Yorkshire Lamb Patties', 1, 14.00, 'closed', '2022-05-27 13:04:33'),
-(8, 6, 'Lobster Thermidor', 1, 36.00, 'closed', '2022-05-27 13:05:24'),
-(9, 6, 'Stuffed Jacket Potatoes', 1, 8.00, 'rejected', '2022-05-27 13:03:53'),
-(16, 7, 'Spring Rolls', 1, 6.00, 'closed', '2023-05-14 15:32:04'),
-(17, 7, 'Yorkshire Lamb Patties', 1, 14.00, NULL, '2023-05-15 14:37:42'),
-(18, 7, 'Yorkshire Lamb Patties', 1, 14.00, NULL, '2023-05-15 17:45:40'),
-(19, 7, 'Roti', 1, 10.00, NULL, '2023-05-15 17:46:03'),
-(20, 7, 'Dal', 1, 15.00, NULL, '2023-05-15 17:46:03'),
-(21, 7, 'Vegetable Fried Rice', 1, 5.00, NULL, '2023-05-16 14:52:05'),
-(22, 7, 'Spring Rolls', 1, 6.00, NULL, '2023-05-16 14:52:05');
+INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `status`, `date`, `d_loc`) VALUES
+(1, 4, 'Spring Rolls', 2, 6.00, 'rejected', '2022-05-27 11:43:26', ''),
+(2, 4, 'Prawn Crackers', 1, 7.00, 'closed', '2022-05-27 11:11:41', ''),
+(3, 5, 'Chicken Madeira', 1, 23.00, 'closed', '2022-05-27 11:42:35', ''),
+(4, 5, 'Cheesy Mashed Potato', 1, 5.00, 'in process', '2022-05-27 11:42:55', ''),
+(5, 5, 'Meatballs Penne Pasta', 1, 10.00, 'closed', '2022-05-27 13:18:03', ''),
+(6, 5, 'Yorkshire Lamb Patties', 1, 14.00, NULL, '2022-05-27 11:40:51', ''),
+(7, 6, 'Yorkshire Lamb Patties', 1, 14.00, 'closed', '2022-05-27 13:04:33', ''),
+(8, 6, 'Lobster Thermidor', 1, 36.00, 'closed', '2022-05-27 13:05:24', ''),
+(9, 6, 'Stuffed Jacket Potatoes', 1, 8.00, 'rejected', '2022-05-27 13:03:53', ''),
+(16, 7, 'Spring Rolls', 1, 6.00, 'closed', '2023-05-14 15:32:04', ''),
+(17, 7, 'Yorkshire Lamb Patties', 1, 14.00, NULL, '2023-05-15 14:37:42', ''),
+(18, 7, 'Yorkshire Lamb Patties', 1, 14.00, NULL, '2023-05-15 17:45:40', ''),
+(19, 7, 'Roti', 1, 10.00, NULL, '2023-05-15 17:46:03', ''),
+(20, 7, 'Dal', 1, 15.00, NULL, '2023-05-15 17:46:03', ''),
+(21, 7, 'Vegetable Fried Rice', 1, 5.00, NULL, '2023-05-16 14:52:05', ''),
+(22, 7, 'Spring Rolls', 1, 6.00, NULL, '2023-05-16 14:52:05', ''),
+(23, 7, 'Roti', 2, 10.00, NULL, '2023-06-04 15:54:30', 'Room 411'),
+(24, 7, 'Dal', 1, 15.00, NULL, '2023-06-04 15:54:30', 'Room 411'),
+(25, 7, 'Chicken Madeira', 2, 23.00, NULL, '2023-07-04 06:03:31', '7'),
+(26, 7, 'Chicken Madeira', 1, 23.00, NULL, '2023-07-04 07:01:15', '5'),
+(27, 7, ' Buffalo Wings', 1, 11.00, NULL, '2023-07-04 07:01:15', '5');
 
 --
 -- Indexes for dumped tables
@@ -286,7 +292,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_orders`
 --
 ALTER TABLE `users_orders`
-  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

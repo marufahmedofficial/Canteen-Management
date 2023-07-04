@@ -20,7 +20,8 @@ if(empty($_SESSION["user_id"]))
 }
 else{
 
-										  
+                                                $D_Loc = $_POST['d_loc'];
+
 												foreach ($_SESSION["cart_item"] as $item)
 												{
 											
@@ -29,7 +30,7 @@ else{
 													if($_POST['submit'])
 													{
 						
-													$SQL="insert into users_orders(u_id,title,quantity,price) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."')";
+													$SQL="insert into users_orders(u_id,title,quantity,price,d_loc) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','$D_Loc')";
 						
 														mysqli_query($db,$SQL);
 														
@@ -164,6 +165,9 @@ else{
                                                 <label class="custom-control custom-radio  m-b-20">
                                                     <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Cash on Delivery</span>
                                                 </label>
+                                            </li>
+                                            <li>
+                                                <input type="text" name="d_loc" style="height: 40px; weight: 100px; padding: 20px; margin: 20px 20px;" placeholder="Enter Table No." required>
                                             </li>
                                             <!--
                                             <li>
