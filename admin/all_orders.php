@@ -166,7 +166,7 @@ session_start();
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
 																								<td>BDT '.$rows['price'].'</td>
-																								<td>'.$rows['address'].'</td>';
+																								<td>'.$rows['d_loc'].'</td>';
 																								?>
 																								<?php 
 																			$status=$rows['status'];

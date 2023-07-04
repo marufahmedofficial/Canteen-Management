@@ -20,7 +20,8 @@ if(empty($_SESSION["user_id"]))
 }
 else{
 
-										  
+                                                $D_Loc = $_POST['d_loc'];
+
 												foreach ($_SESSION["cart_item"] as $item)
 												{
 											
@@ -29,7 +30,7 @@ else{
 													if($_POST['submit'])
 													{
 						
-													$SQL="insert into users_orders(u_id,title,quantity,price) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."')";
+													$SQL="insert into users_orders(u_id,title,quantity,price,d_loc) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','$D_Loc')";
 						
 														mysqli_query($db,$SQL);
 														
@@ -69,7 +70,7 @@ else{
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.png" alt="" height="40px" width="65px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -164,6 +165,9 @@ else{
                                                 <label class="custom-control custom-radio  m-b-20">
                                                     <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Cash on Delivery</span>
                                                 </label>
+                                            </li>
+                                            <li>
+                                                <input type="text" name="d_loc" style="height: 40px; weight: 100px; padding: 20px; margin: 20px 20px;" placeholder="Enter Table No." required>
                                             </li>
                                             <!--
                                             <li>

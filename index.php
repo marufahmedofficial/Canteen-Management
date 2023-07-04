@@ -18,7 +18,30 @@ session_start();
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"> </head>
+
+ <!-- Favicon -->
+ <link href="img/favicon.ico" rel="icon">
+ 
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+  <style> 
+  #btn-back-to-top {
+  position: fixed;
+  bottom: 9px;
+  right: 8px;
+  display: none;
+  }
+    #btn-back-to-top:hover {
+            background-color:darkblue;   
+    } 
+
+
+  </style>
+
+
+</head>
 
 <body class="home">
     
@@ -26,7 +49,7 @@ session_start();
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.png" alt="" height="40px" width="65px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -56,6 +79,11 @@ session_start();
             </nav>
 
         </header>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+
 
         <section class="hero bg-image" data-image-src="images/img/pimg.jpg">
             <div class="hero-inner">
@@ -290,11 +318,45 @@ session_start();
                                 </div>
                     </div>
                 </div>
-          
+
+          <!-- Back to top button -->
+         <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+         </button>
+
             </div>
+            
         </footer>
     
-    
+
+
+    <script>
+        //Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}  
+    </script>        
 
     <script src="js/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
