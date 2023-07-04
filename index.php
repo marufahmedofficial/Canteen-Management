@@ -72,7 +72,7 @@ session_start();
                                 if (mysqli_num_rows($result) > 0){
                                      while($row = mysqli_fetch_assoc($result)) {
                                         $point = $row['point'];
-                                        echo  "<li class='nav-item'<a href='your_orders.php' class='nav-link active'>💰$point</a> </li>";
+                                        echo "<li class='nav-item'><a href='point.php' class='nav-link active'>💰$point</a> </li>";
                                      }
                                 }
 									
