@@ -346,27 +346,6 @@ session_start();
         </footer>
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> d1d918ede7e60b5e7dbdddd338ddf230e662e10f
     <script>
         //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
