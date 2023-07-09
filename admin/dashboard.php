@@ -86,6 +86,8 @@ else
                             </ul>
                         </li>
 						 <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
+
+                         <li> <a href="#            #"><i class="fa fa-plus" aria-hidden="true"></i><span>Point</span></a></li>
                          
                     </ul>
                 </nav>
@@ -93,6 +95,8 @@ else
             </div>
            
         </div>
+
+
     
         <div class="page-wrapper">
          
