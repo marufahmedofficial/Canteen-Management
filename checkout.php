@@ -171,11 +171,11 @@ else{
                                     </div>
                                     <div class="payment-option">
                                         <ul class=" list-unstyled">
-                                            <li>
+                                            <!-- <li>
                                                 <label class="custom-control custom-radio  m-b-20">
                                                     <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Cash on Delivery</span>
                                                 </label>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <input type="text" name="d_loc" style="height: 40px; weight: 100px; padding: 20px; margin: 20px 20px;" placeholder="Enter Table No." required>
                                             </li>
