@@ -165,7 +165,7 @@ session_start();
 																					           <td>'.$rows['username'].'</td>
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
-																								<td>BDT '.$rows['price'].'</td>
+																								<td>Point '.$rows['price'].'</td>
 																								<td>'.$rows['d_loc'].'</td>';
 																								?>
 																								<?php 
