@@ -95,7 +95,7 @@ session_start();
         <section class="hero bg-image" data-image-src="images/img/pimg.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
-                    <h1>UITS CAFETERIA Served & Take-Out</h1>
+                    <h1>UITS EazyCanteen Served & Take-Out</h1>
                     
                     <div class="banner-form">
                         <form class="form-inline">
@@ -209,9 +209,9 @@ session_start();
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 text-center">
+                    <!-- <div class="col-sm-12 text-center">
                         <p class="pay-info">Cash on Delivery</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -295,7 +295,7 @@ session_start();
                         <div class="col-xs-12 col-sm-3 payment-options color-gray">
                             <h5>Payment Options</h5>
                             <ul>
-                                <li>Only COD is available now</li>
+                                <li>Only Pay with Point is availabe</li>
                                <!-- 
                                 <li>
                                     <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
