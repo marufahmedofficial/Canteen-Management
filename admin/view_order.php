@@ -46,7 +46,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
             <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
                         
-                        <span><img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"></span>
+                    <span><img class="img-rounded" src="images/Canteen2.png" alt="" height="60px" width="65px"></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
