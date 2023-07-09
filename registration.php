@@ -131,7 +131,7 @@ if(isset($_POST['submit'] ))
 							  <form action="" method="post">
                                  <div class="row">
 								  <div class="form-group col-sm-12">
-                                       <label for="exampleInputEmail1">Student ID</label>
+                                       <label for="exampleInputEmail1">User Name</label>
                                        <input class="form-control" type="text" name="username" id="example-text-input"> 
                                     </div>
                                     <div class="form-group col-sm-6">
