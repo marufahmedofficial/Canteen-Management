@@ -135,7 +135,7 @@ session_start();
                                                 <th>User</th>		
                                                 <th>Title</th>
                                                 <th>Quantity</th>
-                                                <th>Price</th>
+                                                <th>Point</th>
 												<th>Location</th>
 												<th>Status</th>												
 												 <th>Reg-Date</th>
@@ -165,7 +165,7 @@ session_start();
 																					           <td>'.$rows['username'].'</td>
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
-																								<td>Point '.$rows['price'].'</td>
+																								<td>'.$rows['price'].'</td>
 																								<td>'.$rows['d_loc'].'</td>';
 																								?>
 																								<?php 
