@@ -227,7 +227,7 @@ else{
                         <div class="col-xs-12 col-sm-3 payment-options color-gray">
                             <h5>Payment Options</h5>
                             <ul>
-                                <li>Only COD is available now</li>
+                            <li>Only Pay with Point is available</li>
                                <!-- 
                                 <li>
                                     <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
