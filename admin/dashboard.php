@@ -87,7 +87,9 @@ else
                         </li>
 						 <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
 
-                         <li> <a href="#            #"><i class="fa fa-plus" aria-hidden="true"></i><span>Point</span></a></li>
+
+                         <li> <a href="add_points.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Point</span></a></li>
+
                          
                     </ul>
                 </nav>
@@ -108,6 +110,20 @@ else
                             <div class="card-header">
                                 <h4 class="m-b-0 text-white">Admin Dashboard</h4>
                             </div>
+
+
+                                <!--date picker
+                                <form action="#" method="post">
+                                <input type="date" name="date_picker" />
+                                <?php
+                                    $Date = $_POST["date_picker"];
+                                    echo "<p>'$Date'</p>";
+                                ?>
+                                <input type="submit" name="submit" value="Submit">
+                                </form>
+                                -->
+
+
                      <div class="row">
                    
                     

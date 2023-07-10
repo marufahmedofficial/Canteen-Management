@@ -226,7 +226,9 @@ $item_total += ($item["price"]*$item["quantity"]);
                                
                                         <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info"> 
 										<span class="price pull-left" >Point <?php echo $product['price']; ?></span>
-										  <input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2" />
+                                          
+                      <input class="b-r-0" type="number" name="quantity"  style="margin-left:30px; width: 48px;" value="1" size="2" />
+								
 										  <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add To Cart" />
 										</div>
 										</form>

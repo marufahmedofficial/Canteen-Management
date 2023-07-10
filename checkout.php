@@ -29,6 +29,23 @@ else{
 												
 													if($_POST['submit'])
 													{
+
+                                                        $user_id = $_SESSION["user_id"];
+                                                        $result= mysqli_query($db,"select point from users where u_id='$user_id'");
+                                                        if (mysqli_num_rows($result) > 0){
+                                                            while($row = mysqli_fetch_assoc($result)) {
+                                                                $point = $row['point'];
+                                                                $newPoint = $point - $item_total;
+
+                                                                $sql = "UPDATE users SET point=$newPoint WHERE u_id='$user_id'";
+
+                                                                if (mysqli_query($db,$sql) === TRUE) {
+                                                                echo "Record updated successfully";
+                                                                } else {
+                                                                echo "Error updating record: " . $db->error;
+                                                                }
+                                                            }
+                                                        }
 						
 													$SQL="insert into users_orders(u_id,title,quantity,price,d_loc) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','$D_Loc')";
 						
@@ -47,8 +64,12 @@ else{
 														
 													}
 												}
-?>
 
+                                                if(isset($_POST['submit']))    {
+                                                    
+                                                }
+
+?>
 
 <head>
     <meta charset="utf-8">
