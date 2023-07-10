@@ -119,7 +119,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
             <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
                         
-                        <span><img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"></span>
+                    <span><img class="img-rounded" src="images/Canteen2.png" alt="" height="60px" width="65px"></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
@@ -152,7 +152,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
                         <li class="nav-label">Log</li>
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Category</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="add_category.php">Add Category</a></li>                                
                             </ul>
@@ -166,6 +166,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                             </ul>
                         </li>
 						 <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
+
+                         <li> <a href="add_points.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Point</span></a></li>
                          
                     </ul>
                 </nav>

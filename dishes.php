@@ -30,7 +30,7 @@ include_once 'product-action.php';
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.png" alt="" height="40px" width="65px"> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/Canteen.png" alt="" height="50px" width="65px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                        <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -48,6 +48,16 @@ include_once 'product-action.php';
 									
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+
+                                    $user_id = $_SESSION['user_id'];
+                                    $result= mysqli_query($db,"select point from users where u_id='$user_id'");
+                                    if (mysqli_num_rows($result) > 0){
+                                         while($row = mysqli_fetch_assoc($result)) {
+                                            $point = $row['point'];
+                                            echo "<li class='nav-item'><a href='point.php' class='nav-link active'>💰$point</a> </li>";
+                                         }
+                                    }
+                                        
 							}
 
 						?>
@@ -123,7 +133,7 @@ foreach ($_SESSION["cart_item"] as $item)
 										
                                         <div class="form-group row no-gutter">
                                             <div class="col-xs-8">
-                                                 <input type="text" class="form-control b-r-0" value='BDT <?php echo $item["price"]; ?>' readonly id="exampleSelect1">
+                                                 <input type="text" class="form-control b-r-0" value='Point <?php echo $item["price"]; ?>' readonly id="exampleSelect1">
                                                    
                                             </div>
                                             <div class="col-xs-4">
@@ -146,7 +156,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 <div class="widget-body">
                                     <div class="price-wrap text-xs-center">
                                         <p>TOTAL</p>
-                                        <h3 class="value"><strong><?php echo "BDT ".$item_total; ?></strong></h3>
+                                        <h3 class="value"><strong><?php echo "Point ".$item_total; ?></strong></h3>
                                         <p>Free Delivery!</p>
                                         <?php
                                         if($item_total==0){
@@ -215,8 +225,8 @@ $item_total += ($item["price"]*$item["quantity"]);
                                         </div>
                                
                                         <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info"> 
-										<span class="price pull-left" >BDT <?php echo $product['price']; ?></span>
-										  <input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2" />
+										<span class="price pull-left" >Point <?php echo $product['price']; ?></span>
+										  <input class="b-r-0" type="number" name="quantity"  style="margin-left:30px; width: 48px;" value="1" size="2" />
 										  <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add To Cart" />
 										</div>
 										</form>

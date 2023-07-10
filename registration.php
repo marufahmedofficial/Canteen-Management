@@ -85,7 +85,7 @@ if(isset($_POST['submit'] ))
             <nav class="navbar navbar-dark">
                <div class="container">
                   <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                  <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.png" alt="" height="40px" width="65px"> </a>
+                  <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/Canteen.png" alt="" height="50px" width="65px"> </a>
                   <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                      <ul class="nav navbar-nav">
 							<li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -131,7 +131,7 @@ if(isset($_POST['submit'] ))
 							  <form action="" method="post">
                                  <div class="row">
 								  <div class="form-group col-sm-12">
-                                       <label for="exampleInputEmail1">Student ID</label>
+                                       <label for="exampleInputEmail1">User Name</label>
                                        <input class="form-control" type="text" name="username" id="example-text-input"> 
                                     </div>
                                     <div class="form-group col-sm-6">

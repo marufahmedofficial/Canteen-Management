@@ -29,6 +29,23 @@ else{
 												
 													if($_POST['submit'])
 													{
+
+                                                        $user_id = $_SESSION["user_id"];
+                                                        $result= mysqli_query($db,"select point from users where u_id='$user_id'");
+                                                        if (mysqli_num_rows($result) > 0){
+                                                            while($row = mysqli_fetch_assoc($result)) {
+                                                                $point = $row['point'];
+                                                                $newPoint = $point - $item_total;
+
+                                                                $sql = "UPDATE users SET point=$newPoint WHERE u_id='$user_id'";
+
+                                                                if (mysqli_query($db,$sql) === TRUE) {
+                                                                echo "Record updated successfully";
+                                                                } else {
+                                                                echo "Error updating record: " . $db->error;
+                                                                }
+                                                            }
+                                                        }
 						
 													$SQL="insert into users_orders(u_id,title,quantity,price,d_loc) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','$D_Loc')";
 						
@@ -47,8 +64,12 @@ else{
 														
 													}
 												}
-?>
 
+                                                if(isset($_POST['submit']))    {
+                                                    
+                                                }
+
+?>
 
 <head>
     <meta charset="utf-8">
@@ -70,7 +91,7 @@ else{
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/uits-logo.png" alt="" height="40px" width="65px"> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/Canteen.png" alt="" height="50px" width="65px"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -88,6 +109,16 @@ else{
 									
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+
+                                    $user_id = $_SESSION['user_id'];
+                                    $result= mysqli_query($db,"select point from users where u_id='$user_id'");
+                                    if (mysqli_num_rows($result) > 0){
+                                         while($row = mysqli_fetch_assoc($result)) {
+                                            $point = $row['point'];
+                                            echo "<li class='nav-item'><a href='point.php' class='nav-link active'>💰$point</a> </li>";
+                                         }
+                                    }
+                                        
 							}
 
 						?>
@@ -141,7 +172,7 @@ else{
 											   
                                                     <tr>
                                                         <td>Cart Subtotal</td>
-                                                        <td> <?php echo "BDT ".$item_total; ?></td>
+                                                        <td> <?php echo "Point ".$item_total; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Delivery Charges</td>
@@ -149,7 +180,7 @@ else{
                                                     </tr>
                                                     <tr>
                                                         <td class="text-color"><strong>Total</strong></td>
-                                                        <td class="text-color"><strong> <?php echo "BDT ".$item_total; ?></strong></td>
+                                                        <td class="text-color"><strong> <?php echo "Point ".$item_total; ?></strong></td>
                                                     </tr>
                                                 </tbody>
 												
@@ -161,11 +192,11 @@ else{
                                     </div>
                                     <div class="payment-option">
                                         <ul class=" list-unstyled">
-                                            <li>
+                                            <!-- <li>
                                                 <label class="custom-control custom-radio  m-b-20">
                                                     <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Cash on Delivery</span>
                                                 </label>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <input type="text" name="d_loc" style="height: 40px; weight: 100px; padding: 20px; margin: 20px 20px;" placeholder="Enter Table No." required>
                                             </li>

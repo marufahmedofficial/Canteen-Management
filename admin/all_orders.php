@@ -35,7 +35,7 @@ session_start();
             <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
                         
-                        <span><img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"></span>
+                    <span><img class="img-rounded" src="images/Canteen2.png" alt="" height="60px" width="65px"></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
@@ -90,7 +90,7 @@ session_start();
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
                         <li class="nav-label">Log</li>
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Category</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="add_category.php">Add Category</a></li>                                
                             </ul>
@@ -104,6 +104,8 @@ session_start();
                             </ul>
                         </li>
 						 <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
+
+                         <li> <a href="add_points.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Point</span></a></li>
                          
                     </ul>
                 </nav>
@@ -135,7 +137,7 @@ session_start();
                                                 <th>User</th>		
                                                 <th>Title</th>
                                                 <th>Quantity</th>
-                                                <th>Price</th>
+                                                <th>Point</th>
 												<th>Location</th>
 												<th>Status</th>												
 												 <th>Reg-Date</th>
@@ -165,7 +167,7 @@ session_start();
 																					           <td>'.$rows['username'].'</td>
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
-																								<td>BDT '.$rows['price'].'</td>
+																								<td>'.$rows['price'].'</td>
 																								<td>'.$rows['d_loc'].'</td>';
 																								?>
 																								<?php 

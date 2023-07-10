@@ -38,7 +38,7 @@ else
             <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
                         
-                        <span><img class="img-rounded" src="images/uits-logo.jpg" alt="" height="35px" width="65px"></span>
+                        <span><img class="img-rounded" src="images/Canteen2.png" alt="" height="60px" width="65px"></span>
                     </a>
                 </div>
 
@@ -86,6 +86,8 @@ else
                             </ul>
                         </li>
 						 <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
+
+                         <li> <a href="add_points.php"><i class="fa fa-plus" aria-hidden="true"></i><span>Point</span></a></li>
                          
                     </ul>
                 </nav>
@@ -93,6 +95,8 @@ else
             </div>
            
         </div>
+
+
     
         <div class="page-wrapper">
          
@@ -104,6 +108,20 @@ else
                             <div class="card-header">
                                 <h4 class="m-b-0 text-white">Admin Dashboard</h4>
                             </div>
+
+
+                                <!--date picker
+                                <form action="#" method="post">
+                                <input type="date" name="date_picker" />
+                                <?php
+                                    $Date = $_POST["date_picker"];
+                                    echo "<p>'$Date'</p>";
+                                ?>
+                                <input type="submit" name="submit" value="Submit">
+                                </form>
+                                -->
+
+
                      <div class="row">
                    
                     
