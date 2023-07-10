@@ -5,6 +5,32 @@ include("../connection/connect.php");
 error_reporting(0);
 session_start();
 
+
+
+/*try from here but error
+$o_id;
+
+if(isset($_POST['submit'])){
+
+    if($_POST['cancel']){
+    $status="rejected";
+    echo $status;
+    echo $o_id;
+    }else{
+    $status="closed";
+    echo $status;
+    echo $o_id;
+    }
+
+$sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$o_id'");
+
+//echo "<script>alert('Form Details Updated Successfully');</script>";
+
+}
+error...*/
+
+
+
 ?>
 <head>
     <meta charset="utf-8">
@@ -140,8 +166,8 @@ session_start();
                                                 <th>Point</th>
 												<th>Location</th>
 												<th>Status</th>												
-												 <th>Reg-Date</th>
-												  <th>Action</th>
+												 <th>Action 1</th>
+												  <th>Action 2</th>
 												 
                                             </tr>
                                         </thead>
@@ -169,6 +195,16 @@ session_start();
 																								<td>'.$rows['quantity'].'</td>
 																								<td>'.$rows['price'].'</td>
 																								<td>'.$rows['d_loc'].'</td>';
+                                                                                                
+
+                                                                                                //Order id fatched from here but error detected
+                                                                                                $o_id = $rows['o_id'];
+                                                                                                //error...
+
+
+
+
+
 																								?>
 																								<?php 
 																			$status=$rows['status'];
@@ -198,9 +234,15 @@ session_start();
 																			<?php 
 																			} 
 																			?>
-																						<?php																									
-																							echo '	<td>'.$rows['date'].'</td>';
+                                                                            <form action="#" method="post">
+                                                                            <?php																									
+																							//echo '	<td>'.$rows['date'].'</td>';
+                                                                                            echo '<td><button name="cancel"><i class="" style="font-size:16px; cursor: pointer;">C</i></button>
+                                                                                            <button name="delivered"><i class="" style="font-size:16px; cursor: pointer;">D</i></button>
+                                                                                            <button type="submit" name="submit"><i class="" style="font-size:16px; cursor: pointer;">Submit</i></button></td>'
 																							?>
+                                                                        </form>
+																						
 																									 <td>
 																									 <a href="delete_orders.php?order_del=<?php echo $rows['o_id'];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 																								<?php
