@@ -134,8 +134,8 @@ else{
                     <ul class="row links">
                       
                         <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="categories.php">Choose Category</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Pick Your favorite food</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item active" ><span>3</span><a href="checkout.php">Order and Pay</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Order and Pay</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item active" ><span>3</span><a href="checkout.php">Pick Your favorite food</a></li>
                     </ul>
                 </div>
             </div>
