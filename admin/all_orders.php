@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <?php
 include("../connection/connect.php");
 error_reporting(0);
 session_start();
-
-
-
-/*try from here but error
-$o_id;
-
-if(isset($_POST['submit'])){
-
-    if($_POST['cancel']){
-    $status="rejected";
-    echo $status;
-    echo $o_id;
-    }else{
-    $status="closed";
-    echo $status;
-    echo $o_id;
-    }
-
-$sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$o_id'");
-
-//echo "<script>alert('Form Details Updated Successfully');</script>";
-
-}
-error...*/
-
-
-
 ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -195,15 +170,6 @@ error...*/
 																								<td>'.$rows['quantity'].'</td>
 																								<td>'.$rows['price'].'</td>
 																								<td>'.$rows['d_loc'].'</td>';
-                                                                                                
-
-                                                                                                //Order id fatched from here but error detected
-                                                                                                $o_id = $rows['o_id'];
-                                                                                                //error...
-
-
-
-
 
 																								?>
 																								<?php 
@@ -237,9 +203,54 @@ error...*/
                                                                             <form action="#" method="post">
                                                                             <?php																									
 																							//echo '	<td>'.$rows['date'].'</td>';
-                                                                                            echo '<td><button name="cancel"><i class="" style="font-size:16px; cursor: pointer;">C</i></button>
-                                                                                            <button name="delivered"><i class="" style="font-size:16px; cursor: pointer;">D</i></button>
-                                                                                            <button type="submit" name="submit"><i class="" style="font-size:16px; cursor: pointer;">Submit</i></button></td>'
+
+
+
+
+
+
+
+
+
+
+                                                                                            /*update status from here
+                                                                                                $o_id = $rows['o_id'];
+
+                                                                                                if(isset($_POST['submit'])){
+
+                                                                                                    $status=$_POST["action"];
+
+                                                                                                    $sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$o_id'");
+
+                                                                                                    //unset($_POST['submit']);
+
+                                                                                                }
+                                                                                            to here.....*/
+
+
+
+
+
+
+
+                                                                                            
+
+
+                                                                                            echo '
+                                                                                            <td>
+
+                                                                                            <input type="radio" id="cancel" name="action" value="rejected" title="cancelled">
+                                                                                            <label for="cancel">C</label>
+                                                                                            <input type="radio" id="deliver" name="action" value="closed" title="delivered">
+                                                                                            <label for="deliver">D</label>
+                                                                                            
+                                                                                            
+                                                                                            <button type="submit" name="submit" style="border-radius: 10px;"><i class="" style="font-size:16px; cursor: pointer;">Submit</i></button>
+                                                                                            
+
+                                                                                            </td>
+                                                                                            '
+
 																							?>
                                                                         </form>
 																						
