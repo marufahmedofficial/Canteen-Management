@@ -112,16 +112,23 @@ else
                             </div>
 
 
-                                <!--date picker
+
+
+                                <!--date picker-->
                                 <form action="#" method="post">
-                                <input type="date" name="date_picker" />
+                                <input type="date" name="date_picker"/>
                                 <?php
                                     $Date = $_POST["date_picker"];
-                                    echo "<p>'$Date'</p>";
+                                    
+                                    echo "<p>$Date</p>";
+                                    
                                 ?>
                                 <input type="submit" name="submit" value="Submit">
                                 </form>
-                                -->
+                                <!--date picker-->
+
+                                
+                                
 
 
                      <div class="row">
