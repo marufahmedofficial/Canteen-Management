@@ -317,7 +317,7 @@ session_start();
                         </div>
                         <div class="col-xs-12 col-sm-4 address color-gray">
                                     <h5>Address</h5>
-                                    <p>Holding 190, Road 5, Block J, Baridhara, Maddha Nayanagar, Vatara, Dhaka-1212</p>
+                                    <p>Holding 190, Road 5, Block J, Baridhara, Maddha Nayanagar, Vatara, Dhaka-1212 </p>
                                     <h5>Phone: +8809678008487</a></h5> </div>
                                 <div class="col-xs-12 col-sm-5 additional-info color-gray">
                                     <h5>Additional informations</h5>
