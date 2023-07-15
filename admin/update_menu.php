@@ -161,6 +161,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_dishes.php">Add Dish</a></li>
                               
                                 
                             </ul>

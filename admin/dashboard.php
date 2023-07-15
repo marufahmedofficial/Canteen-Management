@@ -83,6 +83,7 @@ else
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_dishes.php">Add Dish</a></li>
                             </ul>
                         </li>
 						 <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
@@ -123,7 +124,7 @@ else
                                     echo "<p>$Date</p>";
                                     
                                 ?>
-                                <input type="submit" name="submit" value="Submit">
+                                <input type="submit" name="submit" value="Submit" style="cursor: pointer;">
                                 </form>
                                 <!--date picker-->
 
@@ -178,12 +179,26 @@ else
                                     <span><i class="fa fa-shopping-cart f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders";
-												$result=mysqli_query($db,$sql); 
+                                    <h2><?php 
+                                    if($Date==''){
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders');
+                                    }else{
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE date = "'.$Date.'"');
+                                    }
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">Total Orders</p>
+                                                    <?php
+                                                    if($Date==''){
+                                                    ?>
+                                                    <p class="m-b-0">Total Orders</p>
+                                                    <?php
+                                                        }else{
+                                                    ?>
+                                                    <p class="m-b-0" style="font-size: 14px;">Total Orders of <?php echo $Date?></p>
+                                                    <?php
+                                                        }
+                                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -216,12 +231,26 @@ else
                                     <span><i class="fa fa-spinner f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders WHERE status = 'in process' ";
-												$result=mysqli_query($db,$sql); 
+                                    <h2><?php 
+                                    if($Date==''){
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "in process"');
+                                    }else{
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "in process" AND date = "'.$Date.'"');
+                                    }
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">Processing Orders</p>
+                                                    <?php
+                                                    if($Date==''){
+                                                    ?>
+                                                    <p class="m-b-0">Processing Orders</p>
+                                                    <?php
+                                                        }else{
+                                                    ?>
+                                                    <p class="m-b-0" style="font-size: 14px;">Processing Orders of <?php echo $Date?></p>
+                                                    <?php
+                                                        }
+                                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -234,12 +263,26 @@ else
                                     <span><i class="fa fa-check f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders WHERE status = 'closed' ";
-												$result=mysqli_query($db,$sql); 
+                                    <h2><?php 
+                                    if($Date==''){
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "closed"');
+                                    }else{
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "closed" AND date = "'.$Date.'"');
+                                    }
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">Delivered Orders</p>
+                                            <?php
+                                            if($Date==''){
+                                            ?>
+                                            <p class="m-b-0">Delivered Orders</p>
+                                            <?php
+                                                }else{
+                                            ?>
+                                            <p class="m-b-0" style="font-size: 14px;">Delivered Orders of <?php echo $Date?></p>
+                                            <?php
+                                                }
+                                            ?>
                                 </div>
                             </div>
                         </div>
@@ -254,12 +297,26 @@ else
                                     <span><i class="fa fa-times f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders WHERE status = 'rejected' ";
-                                        $result=mysqli_query($db,$sql); 
+                                    <h2><?php 
+                                    if($Date==''){
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "rejected"');
+                                    }else{
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "rejected" AND date = "'.$Date.'"');
+                                    }
                                             $rws=mysqli_num_rows($result);
                                             
                                             echo $rws;?></h2>
-                                    <p class="m-b-0">Cancelled Orders</p>
+                                            <?php
+                                            if($Date==''){
+                                            ?>
+                                            <p class="m-b-0">Cancelled Orders</p>
+                                            <?php
+                                                }else{
+                                            ?>
+                                            <p class="m-b-0" style="font-size: 14px;">Cancelled Orders of <?php echo $Date?></p>
+                                            <?php
+                                                }
+                                            ?>
                                 </div>
                             </div>
                         </div>
@@ -273,12 +330,27 @@ else
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php 
-                                        $result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed"'); 
+                                    if($Date==''){
+                                        $result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed"');
+                                    }else{
+                                        $result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed" AND date = "'.$Date.'"');
+                                    }
+                                         
                                         $row = mysqli_fetch_assoc($result); 
                                         $sum = $row['value_sum'];
                                         echo $sum;
                                         ?></h2>
-                                    <p class="m-b-0">Total Earnings</p>
+                                        <?php
+                                            if($Date==''){
+                                        ?>
+                                        <p class="m-b-0">Total Earnings</p>
+                                        <?php
+                                            }else{
+                                        ?>
+                                        <p class="m-b-0" style="font-size: 14px;">Total Earnings of <?php echo $Date?></p>
+                                        <?php
+                                            }
+                                        ?>
                                 </div>
                             </div>
                         </div>

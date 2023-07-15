@@ -107,6 +107,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_dishes.php">Add Dish</a></li>
                               
                                 
                             </ul>

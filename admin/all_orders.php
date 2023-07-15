@@ -100,6 +100,7 @@ session_start();
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_dishes.php">Add Dish</a></li>
                               
                                 
                             </ul>
@@ -141,8 +142,8 @@ session_start();
                                                 <th>Point</th>
 												<th>Location</th>
 												<th>Status</th>												
-												 <th>Action 1</th>
-												  <th>Action 2</th>
+												 <th>Reg-Date</th>
+												  <th>Action</th>
 												 
                                             </tr>
                                         </thead>
@@ -202,7 +203,7 @@ session_start();
 																			?>
                                                                             <form action="#" method="post">
                                                                             <?php																									
-																							//echo '	<td>'.$rows['date'].'</td>';
+																							echo '	<td>'.$rows['date'].'</td>';
 
 
 
@@ -236,7 +237,7 @@ session_start();
                                                                                             
 
 
-                                                                                            echo '
+                                                                                            /*echo '
                                                                                             <td>
 
                                                                                             <input type="radio" id="cancel" name="action" value="rejected" title="cancelled">
@@ -249,7 +250,7 @@ session_start();
                                                                                             
 
                                                                                             </td>
-                                                                                            '
+                                                                                            '*/
 
 																							?>
                                                                         </form>

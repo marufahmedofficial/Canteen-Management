@@ -47,7 +47,7 @@ else{
                                                             }
                                                         }
 						
-													$SQL="insert into users_orders(u_id,title,quantity,price,d_loc) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','$D_Loc')";
+													    $SQL="insert into users_orders(u_id,title,quantity,price,d_loc) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."','$D_Loc')";
 						
 														mysqli_query($db,$SQL);
 														
@@ -64,10 +64,6 @@ else{
 														
 													}
 												}
-
-                                                if(isset($_POST['submit']))    {
-                                                    
-                                                }
 
 ?>
 
