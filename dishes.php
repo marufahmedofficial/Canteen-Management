@@ -7,6 +7,10 @@ session_start();
 
 include_once 'product-action.php'; 
 
+/*if(isset($_POST["addToCart"])){
+    $Quantity = $_POST["quantity"];
+
+}*/
 ?>
 
 
@@ -134,14 +138,33 @@ foreach ($_SESSION["cart_item"] as $item)
                                         <div class="form-group row no-gutter">
                                             <div class="col-xs-8">
                                                  <input type="text" class="form-control b-r-0" value='Point <?php echo $item["price"]; ?>' readonly id="exampleSelect1">
-                                                   
                                             </div>
+                                            
                                             <div class="col-xs-4">
                                                <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> </div>
-                                        
+
 									  </div>
 									  
 	<?php
+    //
+    if(isset($_POST['addToCart'])){
+    
+        $Dish = $item["d_id"];
+        $Quantity = $item["quantity"];
+        $result= mysqli_query($db,"select quantity from dishes where d_id='$Dish'");
+                                if (mysqli_num_rows($result) > 0){
+                                     while($row = mysqli_fetch_assoc($result)) {
+                                        $current_quantity = $row['quantity'];
+                                             
+                                        $newQuantity = $current_quantity-$Quantity;
+
+                                        $sql = "UPDATE dishes SET quantity=$newQuantity WHERE d_id='$Dish'";
+                                        mysqli_query($db,$sql);
+
+                                    }
+                                } 
+    }
+    
 $item_total += ($item["price"]*$item["quantity"]); 
 }
 ?>								  
@@ -220,6 +243,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                                             <div class="rest-descr">
                                                 <h6><a href="#"><?php echo $product['title']; ?></a></h6>
                                                 <p> <?php echo $product['slogan']; ?></p>
+                                                <p> <?php echo "Available: ", $product['quantity']; ?></p>
                                             </div>
                            
                                         </div>
@@ -227,9 +251,23 @@ $item_total += ($item["price"]*$item["quantity"]);
                                         <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info"> 
 										<span class="price pull-left" >Point <?php echo $product['price']; ?></span>
                                           
-                      <input class="b-r-0" type="number" name="quantity"  style="margin-left:30px; width: 48px;" value="1" size="2" />
+                      
 								
-										  <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add To Cart" />
+                                            <?php
+                                                if($product['quantity']==0){
+                                                    ?>
+                                                    <p style="font-size: 13px; color: red;">Not Available</p>
+										  <input type="submit" class="btn theme-btn disabled" style="margin-left:40px;" value="Add To Cart" name="addToCart"/>
+                                          <?php
+                                                }
+                                                else{
+                                                    ?>
+                                                    <input class="b-r-0" type="number" name="quantity"  style="margin-left:30px; width: 48px;" value="1" size="2" min="1"/>
+                                            <input type="submit" class="btn theme-btn active" style="margin-left:40px;" value="Add To Cart" name="addToCart"/>
+                                            <?php
+                                                }
+                                                ?>
+
 										</div>
 										</form>
                                     </div>

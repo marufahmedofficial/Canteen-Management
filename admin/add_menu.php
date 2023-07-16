@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 		  
 		
 		
-		if(empty($_POST['d_name'])||empty($_POST['about'])||$_POST['price']==''||$_POST['cat_name']=='')
+		if(empty($_POST['d_name'])||empty($_POST['about'])||$_POST['price']==''||$_POST['cat_name']==''||$_POST['d_quantity']=='')
 		{	
 											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -58,7 +58,7 @@ if(isset($_POST['submit']))
 												
 												
 				                                 
-												$sql = "INSERT INTO dishes(c_id,title,slogan,price,img) VALUE('".$_POST['cat_name']."','".$_POST['d_name']."','".$_POST['about']."','".$_POST['price']."','".$fnew."')";  // store the submited data ino the database :images
+												$sql = "INSERT INTO dishes(c_id,title,slogan,price,img,quantity) VALUE('".$_POST['cat_name']."','".$_POST['d_name']."','".$_POST['about']."','".$_POST['price']."','".$fnew."','".$_POST['d_quantity']."')";  // store the submited data ino the database :images
 												mysqli_query($db, $sql); 
 												move_uploaded_file($temp, $store);
 			  
@@ -197,6 +197,7 @@ if(isset($_POST['submit']))
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_dishes.php">Add Dish</a></li>
                               
                                 
                             </ul>
@@ -268,18 +269,9 @@ if(isset($_POST['submit']))
                                                     </div>
                                             </div>
                                         </div>
-                              
-										
-                                  
-                                        <div class="row">
-                                            
-											
-											
-											
-											
-											
-											
-											 <div class="col-md-12">
+
+                                        <div class="row p-t-20">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Select Category</label>
 													<select name="cat_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
@@ -295,12 +287,21 @@ if(isset($_POST['submit']))
 													 </select>
                                                 </div>
                                             </div>
-											
-											
-											
+                                   
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Quantity</label>
+                                                    <input type="number" name="d_quantity" class="form-control" value="0" min="0">
+                                                </div>
+                                            </div>
                                         </div>
+                              
+										
+                                  
+                                        
                                      
-                                        </div>
+                                    </div>
+
                                     </div>
                                     <div class="form-actions">
                                         <input type="submit" name="submit" class="btn btn-primary" value="Save"> 

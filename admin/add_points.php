@@ -141,6 +141,7 @@ if(isset($_POST['submit']))
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_dishes.php">Add Dish</a></li>
                               
                                 
                             </ul>
@@ -191,7 +192,7 @@ if(isset($_POST['submit']))
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">Points</label>
-                                                    <input type="number" name="point" class="form-control form-control-danger" required>
+                                                    <input type="number" name="point" class="form-control form-control-danger" value="0" min="0" required>
                                                     </div>
                                             </div>
                                      
