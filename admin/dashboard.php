@@ -330,15 +330,41 @@ else
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2><?php 
+                                    //---> from here
+                                    $total = 0;
+
                                     if($Date==''){
-                                        $result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed"');
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "closed"');
+
+                                        if (mysqli_num_rows($result) > 0){
+                                            $sum = 0;
+                                            while($row = mysqli_fetch_array($result)) {
+                                                $Quantity = $row['quantity'];
+                                                $Price = $row['price'];
+                                                $sum += ($Quantity*$Price);
+                                            }
+                                            $total = $sum;
+                                        }
+                                        //$result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed"');
                                     }else{
-                                        $result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed" AND date = "'.$Date.'"');
+                                        $result = mysqli_query($db, 'SELECT * FROM users_orders WHERE status = "closed" AND date = "'.$Date.'"');
+
+                                        if (mysqli_num_rows($result) > 0){
+                                            $sum = 0;
+                                            while($row = mysqli_fetch_array($result)) {
+                                                $Quantity = $row['quantity'];
+                                                $Price = $row['price'];
+                                                $sum += ($Quantity*$Price);
+                                            }
+                                            $total = $sum;
+                                        }
+                                        //$result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed" AND date = "'.$Date.'"');
                                     }
                                          
-                                        $row = mysqli_fetch_assoc($result); 
-                                        $sum = $row['value_sum'];
-                                        echo $sum;
+                                        //$row = mysqli_fetch_assoc($result); 
+                                        //$sum = $row['value_sum'];
+                                        //echo $sum;
+                                        echo $total;
                                         ?></h2>
                                         <?php
                                             if($Date==''){
@@ -350,6 +376,7 @@ else
                                         <p class="m-b-0" style="font-size: 14px;">Total Earnings of <?php echo $Date?></p>
                                         <?php
                                             }
+                                            //---> to here...
                                         ?>
                                 </div>
                             </div>

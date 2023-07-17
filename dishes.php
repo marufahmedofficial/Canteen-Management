@@ -123,6 +123,9 @@ include_once 'product-action.php';
 									
 									
 	<?php
+//---> from here
+$Dish;
+$Quantity;
 
 $item_total = 0;
 
@@ -146,27 +149,27 @@ foreach ($_SESSION["cart_item"] as $item)
 									  </div>
 									  
 	<?php
-    //
-    if(isset($_POST['addToCart'])){
-    
-        $Dish = $item["d_id"];
-        $Quantity = $item["quantity"];
-        $result= mysqli_query($db,"select quantity from dishes where d_id='$Dish'");
-                                if (mysqli_num_rows($result) > 0){
-                                     while($row = mysqli_fetch_assoc($result)) {
-                                        $current_quantity = $row['quantity'];
-                                             
-                                        $newQuantity = $current_quantity-$Quantity;
+    $Dish = $item["d_id"];
+    $Quantity = $item["quantity"];
 
-                                        $sql = "UPDATE dishes SET quantity=$newQuantity WHERE d_id='$Dish'";
-                                        mysqli_query($db,$sql);
-
-                                    }
-                                } 
-    }
-    
 $item_total += ($item["price"]*$item["quantity"]); 
 }
+
+if(isset($_POST['addToCart'])){
+    $result= mysqli_query($db,"select quantity from dishes where d_id='$Dish'");
+                            if (mysqli_num_rows($result) > 0){
+                                 while($row = mysqli_fetch_assoc($result)) {
+                                    $current_quantity = $row['quantity'];
+                                         
+                                    $newQuantity = $current_quantity-$Quantity;
+
+                                    $sql = "UPDATE dishes SET quantity=$newQuantity WHERE d_id='$Dish'";
+                                    mysqli_query($db,$sql);
+
+                                }
+                            } 
+}
+//---> to here...
 ?>								  
 									  
 									  
